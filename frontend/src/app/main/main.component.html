@@ -1,0 +1,100 @@
+<div class="main-container">
+
+    <mat-toolbar class="toolbar" color="primary">
+
+        <span class="spacer"></span>
+
+        <div id="menu-div" [matMenuTriggerFor]="menu" [matBadge]="badgeContent" matBadgeColor="warn"
+            matBadgePosition="below after" matBadgeSize="small">
+
+            <img class="user-avatar" *ngIf="currentUser" [src]="currentUser.picture" alt="User's avatar"
+                referrerpolicy="no-referrer">
+
+            <mat-menu #menu="matMenu">
+                <div class="text-align-center">
+                    <p class="menu-title">Notifications</p>
+                </div>
+                <div class="invite-card" *ngFor="let invite of invites">
+                    <div class="invite-header">
+                        <img class="invite-avatar" [src]="invite.fromPicture" referrerpolicy="no-referrer">
+                        <div>
+                            <p class="invite-title">{{invite.from}}</p>
+
+                            <p class="invite-title">sent you an invite</p>
+                        </div>
+                    </div>
+                    <div class="buttons-section">
+                        <button mat-raised-button color="primary" (click)="acceptInvite($event, invite)">
+                            <mat-icon>check</mat-icon>
+                        </button>
+                        <button mat-raised-button color="warn" (click)="rejectInvite($event, invite)">
+                            <mat-icon>close</mat-icon>
+                        </button>
+                    </div>
+                </div>
+
+                <mat-divider></mat-divider>
+
+                <button mat-menu-item (click)="logout()">
+                    <mat-icon class="exit-icon">exit_to_app</mat-icon>
+                    <span>Logout</span>
+                </button>
+            </mat-menu>
+
+        </div>
+
+    </mat-toolbar>
+
+
+    <mat-sidenav-container class="sidenav-container">
+
+        <mat-sidenav mode="side" opened class="sidenav-side">
+
+            <div class="text-align-center">
+                <button class="add-friend-btn" mat-raised-button color="primary" (click)="openInviteFriendDialog()">ADD
+                    FRIEND</button>
+            </div>
+
+            <div *ngFor="let friend of friends">
+                <div [class.active-chat]="friend.email === activeChat" class="friend-card" (click)="loadMessages(friend.email)">
+                    <img [src]="friend.picture" alt="" class="invite-avatar">
+                    <p class="margin-0">{{friend.email}}</p>
+                </div>
+            </div>
+
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+
+            <div *ngIf="activeChat !== 'NONE'" class="chat-container">
+
+                <div class="height-100">
+                    <div *ngFor="let message of currentConversationMessages" class="message-card-container">
+                        <div [class.align-right]="message.to !== currentUser.email"
+                        [class.align-left]="message.to === currentUser.email">
+                            <div class="header-and-content">
+                                <div>
+                                    <p class="message-content">{{message.content}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="message-form-card">
+                    <form (ngSubmit)="prepareMessage()">
+                        <div class="container-h">
+                            <input type="text" class="form-control" id="message" name="message"
+                                class="sendMessageInput no-outline" [(ngModel)]="message">
+                            <button mat-raised-button color="primary">Send</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </mat-sidenav-content>
+
+    </mat-sidenav-container>
+
+</div>

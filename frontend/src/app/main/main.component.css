@@ -1,0 +1,173 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.toolbar {
+    justify-content: center;
+}
+
+.spacer {
+    flex: auto;
+}
+
+#menu-div:hover {
+    cursor: pointer;
+}
+
+.user-avatar {
+    height: 40px;
+    border-radius: 50%;
+}
+
+.exit-icon {
+    margin-right: 2px !important;
+}
+
+.sidenav-container {
+    height: 100%;
+}
+
+.sidenav-side {
+    min-width: 300px;
+}
+
+.add-friend-btn {
+    margin-top: 5px;
+}
+
+.mat-badge-small.mat-badge-below .mat-badge-content {
+    bottom: 0px;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.invite-card {
+    border: 1px solid #7b1fa2;
+    margin: 10px 0px;
+}
+
+.invite-header {
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.invite-title {
+    font-size: 15px;
+    margin-bottom: 0px !important;
+}
+
+.invite-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.buttons-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.menu-title {
+    color: #fff;
+    font-style: italic;
+}
+
+.friend-card {
+
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.margin-0 {
+    margin: 0px;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.message-form-card {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.container-h {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.sendMessageInput {
+    width: 100%;
+    background-color: #424242;
+    color: white;
+    flex: auto;
+    padding-left: 8px;
+    margin-right: 4px;
+}
+
+.height-100 {
+
+    /* Firefox */
+    height: 100%;
+    overflow-y: scroll;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.height-100::-webkit-scrollbar {
+    display: none;
+}
+
+.height-100 {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+}
+
+.no-outline:focus {
+    outline: none;
+}
+
+.align-right {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.align-left {
+    display: flex;
+    justify-content: flex-start;
+    text-align: right;
+}
+
+.header-and-content {
+    max-width: 50%;
+    background-color: #424242;
+    border-radius: 5px;
+    border: 1px solid #7b1fa2;
+    box-shadow: 5px 2px 5px black;
+    padding: 5px 8px;
+    margin: 10px;
+}
+
+.message-content {
+    margin-bottom: 0px;
+}
+
+.active-chat {
+    border: 1px solid #7b1fa2;
+    background-color: dimgray;
+    box-shadow: 1px 1px 2px black;
+}

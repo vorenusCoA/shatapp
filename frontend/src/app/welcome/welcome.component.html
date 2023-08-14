@@ -1,0 +1,20 @@
+<div class="wrapper mat-app-background">
+    <div class="container">
+        <mat-card>
+
+            <mat-card-header>
+                <mat-card-title>Welcome to SHATAPP!</mat-card-title>
+            </mat-card-header>
+
+            <div class="btns-container">
+                <button *ngIf="showLogin" mat-raised-button color="primary" [disabled]="isLoginBtnDisabled"
+                    (click)="login()">LOGIN</button>
+            </div>
+
+            <div *ngIf="!showLogin" class="spinner-container">
+                <mat-spinner diameter="50"></mat-spinner>
+            </div>
+
+        </mat-card>
+    </div>
+</div>

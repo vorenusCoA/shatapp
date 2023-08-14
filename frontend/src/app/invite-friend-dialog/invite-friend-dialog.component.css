@@ -1,0 +1,17 @@
+.input-container {
+    width: 100%;
+}
+
+.dialog-title {
+    text-align: center;
+}
+
+.btns-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.errorMessage {
+    color: #f44336;
+
+}

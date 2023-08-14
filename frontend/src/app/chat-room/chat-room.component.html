@@ -1,0 +1,66 @@
+<!-- <div class="main-container">
+
+    <mat-toolbar id="toolbar" color="primary">
+        <img class="user-avatar" *ngIf="currentUser" [src]="currentUser.picture" alt="User's avatar"
+            referrerpolicy="no-referrer">
+        <span class="spacer"></span>
+        <div>
+            <button (click)="logout()" id="logout-btn" mat-icon-button aria-label="logout">
+                <mat-icon>exit_to_app</mat-icon>
+                <span>Logout</span>
+            </button>
+        </div>
+
+    </mat-toolbar>
+
+
+    <mat-sidenav-container class="sidenav-container">
+
+        <mat-sidenav mode="side" opened class="sidenav-side">
+            <div *ngFor="let loggedUser of loggedUsers  | keyvalue">
+                <mat-card class="card">
+                    <img mat-card-avatar [src]="loggedUser.value.picture" alt="Friend's avatar"
+                        referrerpolicy="no-referrer">
+                    <mat-card-content class="card-content">{{loggedUser.value.name}}</mat-card-content>
+                </mat-card>
+
+                <mat-divider></mat-divider>
+            </div>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+
+            <div class="chat-container">
+
+                <div class="height-100">
+                    <div *ngFor="let message of receivedMessages" class="message-card-container">
+                        <div [className]="message.align">
+                            <div class="header-and-content">
+                                <div *ngIf="message.header">
+                                    <p>{{message.header}}</p>
+                                </div>
+                                <div>
+                                    <p class="message-content">{{message.content}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="message-form-card">
+                    <form (ngSubmit)="prepareMessage()">
+                        <div class="container-h">
+                            <input type="text" class="form-control" id="message" name="message" class="sendMessageInput no-outline"
+                                [(ngModel)]="message">
+                            <button mat-raised-button color="primary">Send</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </mat-sidenav-content>
+
+    </mat-sidenav-container>
+
+</div> -->

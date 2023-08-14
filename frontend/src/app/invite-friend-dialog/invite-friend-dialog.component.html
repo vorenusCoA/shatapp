@@ -1,0 +1,16 @@
+<h1 mat-dialog-title class="dialog-title">Please enter your friend's email</h1>
+<div mat-dialog-content>
+
+    <form #form="ngForm" (ngSubmit)="inviteFriend(form)">
+        <mat-form-field class="input-container">
+            <input id="email" class="form-control" name="email" [(ngModel)]="email" placeholder="Friend's email"
+                matInput type="email" required (input)="emptyErrorMessage()">
+        </mat-form-field>
+        <p class="errorMessage">{{errorMessage}}</p>
+
+        <div class="btns-container">
+            <button mat-raised-button color="primary" mat-dialog-close>Close</button>
+            <button mat-raised-button color="primary">INVITE</button>
+        </div>
+    </form>
+</div>

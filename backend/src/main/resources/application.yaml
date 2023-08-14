@@ -1,0 +1,26 @@
+auth0:
+  audience: http://localhost:8080/shatapp-api
+spring:
+  security:
+    oauth2:
+        resourceserver:
+            jwt:
+                issuer-uri: 
+  h2:
+    console.enabled: true
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+    properties:
+      hibernate: 
+        format_sql: true
+
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
